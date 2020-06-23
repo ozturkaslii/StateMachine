@@ -22,8 +22,7 @@ namespace StateMachine.SiteStates.Concrete
 
         public void SoldOut()
         {
-            Console.WriteLine("Site State - " + Enum.GetName(SiteState.Archived.GetType(), SiteState.Archived));
-            _siteStatusContext.CurrentState = new ArchivedState(_siteStatusContext);
+            throw new InvalidOperationException("Product can't be sold in draft state.");
         }
 
         public void Approve()
